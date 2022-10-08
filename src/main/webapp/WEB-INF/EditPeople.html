@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/XML/1998/namespace">
+<head>
+    <meta charset="UTF-8">
+    <title>EditPerson</title>
+</head>
+<body>
+
+<from th:method="PATCH" th:action="@{/peopel}" th:object="person">
+    <label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name">
+    <div style="color: red" th:if="${#fields.hasErrors('name')}" th:error="*{name}">Name error</div>
+    </br>
+    <label for="lastName">lastName</label>
+    <input type="text" th:field="*{lastName}" id="lastName">
+    <div style="color: red" th:if="${#fields.hasErrors('lastName')}" th:error="*{name}">lastName error</div>
+    </br>
+    <label for="email">email</label>
+    <input type="text" th:field="*{email}" id="email">
+    <div style="color: red" th:if="${#fields.hasErrors('email')}" th:error="*{email}">email error</div>
+
+    <input type="submit" value="Обновлять человека"/>
+</from>
+</body>
+</html>

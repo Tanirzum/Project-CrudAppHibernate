@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/XML/1998/namespace">
+<head>
+    <meta charset="UTF-8">
+    <title>IndexPerson</title>
+</head>
+<body>
+
+<p th:text="${indexPeople.getName()}"></p>
+<p th:text="${indexPeople.getLastName()}"></p>
+<P th:text="${inddexPeople.getEmail()}"></P>
+</br>
+</hr>
+
+<a href="@{/people/{id}/edit(id=${indexPeople.getId()})}">Редактировать Человека</a>
+
+<form th:method="DELETE" th:action="@{/people/{id}(id=${indexPeople.getId()})}">
+    <input type="submit" value="Удалить человека"/>
+</form>
+
+</body>
+</html>

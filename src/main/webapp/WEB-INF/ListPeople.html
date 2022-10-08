@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/XML/1998/namespace">
+<head>
+    <meta charset="UTF-8">
+    <title>People</title>
+</head>
+<body>
+
+<div style="text-align: center" th:each="person : ${listPeople}">
+    <a th:href="@{/people/{id}(id=${person.getId()})}"
+       th:text="${person.getName()},' , ', ${person.getAge()}">Name</a>
+</div>
+</br>
+</hr>
+
+<a style="text-align: center" href="/people/new">Создать нового человека</a>
+</body>
+</html>
